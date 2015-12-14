@@ -8,8 +8,8 @@ N = rand(10,16,4);
 
 for e=1:episodes
     for i=1:size(Data,1)
-        [BMU,x,y] = getBMU(N,Data(i));
-        N = updateWeights(BMU,x,y,N);
+        [BMU,x,y,Error] = getBMU(N,Data(i));
+        N = updateWeights(BMU,x,y,N,Error,i*e,0.1);
     end
 end
 

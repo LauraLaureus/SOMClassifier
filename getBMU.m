@@ -1,9 +1,10 @@
-function [BMU,x,y] = getBMU(Neurons,example)
+function [BMU,x,y,Error] = getBMU(Neurons,example)
 
 BMU = [];
 x = 0;
 y = 0;
 error_for_BMU = Inf;
+Error = zeros(size(Neurons,1),size(Neurons,2),size(Neurons,3));
 
 for i=1:size(Neurons,1)
     for j=1:size(Neurons,2)
@@ -14,6 +15,7 @@ for i=1:size(Neurons,1)
             y=j;
             BMU = Neurons(i,j,:);
         end
+        Error(i,j,:)= error;
     end
 end
 
