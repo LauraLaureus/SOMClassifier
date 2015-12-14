@@ -7,7 +7,7 @@ error_for_BMU = Inf;
 
 for i=1:size(Neurons,1)
     for j=1:size(Neurons,2)
-        error = 0; %computeError(Neurons(i,j,:),example);
+        error = computeError(Neurons(i,j,:),example);
         if error < error_for_BMU
             error_for_BMU = error;
             x=i;
