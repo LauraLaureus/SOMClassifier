@@ -1,0 +1,6 @@
+%Read Data from file
+Data = readData();
+
+%Neuron matrix 10x16, weights 4;
+N = rand(10,16,4);
+
