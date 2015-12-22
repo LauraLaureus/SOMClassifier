@@ -3,7 +3,7 @@ function view(Data,N)
 figure;
 hold on;
 for example=1:50 %red
-    [~,x,y]= getBMU(N,Data(example));
+    [~,x,y]= getBMU(N,Data(example,:));
     plot(x,y,'or');
 end
 
@@ -17,5 +17,6 @@ for example=101:150 %green
     plot(x,y,'og');
 end
 
-axis([0 10 0 16]);
+axis([0 16 0 10]);
+hold off
 end

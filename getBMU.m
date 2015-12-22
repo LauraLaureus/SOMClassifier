@@ -8,9 +8,10 @@ Error = zeros(size(Neurons,1),size(Neurons,2),size(Neurons,3));
 
 for i=1:size(Neurons,1)
     for j=1:size(Neurons,2)
-        error = computeError(Neurons(i,j,:),example);
-        if error < error_for_BMU
-            error_for_BMU = error;
+        aux(1,:) =  Neurons(i,j,:);
+        error = computeError(aux,example);
+        if norm(error) < error_for_BMU
+            error_for_BMU = norm(error);
             x=i;
             y=j;
             BMU = Neurons(i,j,:);

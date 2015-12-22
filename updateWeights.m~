@@ -1,6 +1,6 @@
 function [Neurons,sigma] = updateWeights(BMU,x,y,Neurons,Error,sigma,iteration,alpha)
    
-    tau = 8000/log(sigma); %sacado del ejemplo de Kohonen
+    tau = 8000/log(sigma); %saca
     sigma = sigma*exp(-iteration/tau);
     
     for i=1:size(Neurons,1)
