@@ -5,15 +5,36 @@ Y = Data(:,2);
 Z = Data(:,3);
 
 figure;
+cameratoolbar;
 plot3(X,Y,Z,'o');
 hold on 
 title('Data in space');
 grid on;
 
 X2 = reshape(SuperposedData(:,:,1),[],1);
-Y2 = SuperposedData(:,:,2);
-Z2 = SuperposedData(:,:,3);
+Y2 = reshape(SuperposedData(:,:,2),[],1);
+Z2 = reshape(SuperposedData(:,:,3),[],1);
 
-plot3(X,Y,Z,'dg');
+plot3(X2,Y2,Z2,'dr');
 hold off;
+
+figure;
+X = Data(:,1);
+Y = Data(:,3);
+Z = Data(:,4);
+
+cameratoolbar;
+plot3(X,Y,Z,'o');
+hold on 
+title('Data in space 2');
+grid on;
+
+X2 = reshape(SuperposedData(:,:,1),[],1);
+Y2 = reshape(SuperposedData(:,:,3),[],1);
+Z2 = reshape(SuperposedData(:,:,4),[],1);
+
+plot3(X2,Y2,Z2,'dr');
+hold off;
+
+
 end
