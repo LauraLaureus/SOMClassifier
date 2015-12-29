@@ -1,4 +1,0 @@
-function [error] = computeError(Nw,example)
-    example = zeros()
-    error = sum((Nw-example).^2);
-end
