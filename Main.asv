@@ -4,7 +4,6 @@ function Main
 Data = readData();
 %Neuron matrix 3x3, weights 4;
 N = rand(3,3,4);
-representDataInSpace(Data,N);
 
 IterationsForOrdering = 8000;
 MaximumConvergence = 50000*size(N,1)* size(N,2);
@@ -31,7 +30,6 @@ for n=0:(IterationsForOrdering-1)
     
     [~,x,y,Error] = getBMU(N,Data(mod(n,150)+1,:));
     [N] = updateWeights(x,y,N,Error,S,alpha);
-    
     if alpha < alpha_limit
        alpha = alpha_limit;
     end
@@ -39,7 +37,6 @@ for n=0:(IterationsForOrdering-1)
        S = S_limit;
     end
 end
-representDataInSpace(Data,N);
 
 disp('End of Ordering Phase.');
 disp(char(10));
