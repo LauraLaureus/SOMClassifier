@@ -6,15 +6,15 @@ Data = readData();
 N = rand(3,3,4);
 representDataInSpace(Data,N);
 
-IterationsForOrdering = 150000;
-MaximumConvergence = 150000*size(N,1)* size(N,2);
+IterationsForOrdering = 100000;
+MaximumConvergence = 50000*size(N,1)* size(N,2);
 
 S0=sqrt(size(N,1)* size(N,2));
 T1 = IterationsForOrdering/log(S0);
 
 
 alpha0 = 0.1;
-alpha_limit =0.03;
+alpha_limit =0.01;
 S_limit =1;
 
 T2 = IterationsForOrdering/log(alpha0/alpha_limit);
@@ -63,7 +63,8 @@ disp('End Convergence Phase');
 msg = [' Diference ordering and convergence:' num2str(delta_N)];
 disp(msg);
 
-
+N = reduceNeurons(Data,N);
+representDataInSpace(Data,N);
 
 end
 
